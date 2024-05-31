@@ -25,7 +25,7 @@ def cweb(text):
 
 
 @app.route("/python/<text>", strict_slashes=False)
-dey python(text):
+dey python(text="is cool"):
     return ("Python {}".format(text.replace("_", " ")))
 
 
