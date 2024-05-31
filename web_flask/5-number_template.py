@@ -11,27 +11,34 @@ app = Flask("__name__")
 
 @app.route('/', strict_slashes=False)
 def hbnb_hello():
+    """display “Hello HBNB!”"""
     return ("Hello HBNB!")
 
 
 @app.route("/hbnb", strict_slashes=False)
 def hbnb():
+    """display “HBNB”"""
     return ("HBNB")
 
 
 @app.route("/c/<text>", strict_slashes=False)
 def cweb(text):
+    """ display “C ”, followed by the
+    value of the text variable"""
     return ("C {}".format(text.replace("_", " ")))
 
 
 @app.route("/python", strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
 def Pweb(text="is cool"):
+    """display “Python ”, followed by the
+    value of the text variable"""
     return ("Python {}".format(text.replace("_", " ")))
 
 
 @app.route("/number/<int:n>", strict_slashes=False)
 def isnum(n):
+    """display “n is a number” only if n is an integer"""
     if isinstance(n, int):
         return ("{} is a number".format(n))
 
