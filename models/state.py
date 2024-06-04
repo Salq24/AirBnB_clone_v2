@@ -23,7 +23,7 @@ class State(BaseModel, Base):
         """initializes city"""
         super().__init__(*args, **kwargs)
 
-    if getenv('HBNB_TYPE_STORAGE') != 'db':
+    if os.getenv('HBNB_TYPE_STORAGE') != 'db':
         @property
         def cities(self):
             """returns city instances"""
